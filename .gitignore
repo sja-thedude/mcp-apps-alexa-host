@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+*.log
+.DS_Store
+# macOS / iCloud conflict copies
+* 2.*
+* 3.*
