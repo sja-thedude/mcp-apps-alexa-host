@@ -1,6 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mcp-apps-alexa-host",
+  // Remove or replace with your own account when you fork.
+  "account_id": "60bc0d18ed5229edce6eb9712d7900d9",
   "main": "src/server/index.ts",
   "compatibility_date": "2026-06-01",
   "compatibility_flags": ["nodejs_compat"],
