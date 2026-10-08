@@ -1,0 +1,55 @@
+{
+  "name": "mcp-apps-alexa-host",
+  "version": "0.1.0",
+  "private": false,
+  "description": "An Alexa+-style voice host for MCP servers: discover tools, render MCP Apps views inline, talk to it, and watch the protocol. Point it at any Streamable HTTP MCP server.",
+  "license": "MIT",
+  "author": "Syeda Juveria Afreen",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-apps",
+    "alexa",
+    "voice",
+    "host",
+    "cloudflare-workers"
+  ],
+  "scripts": {
+    "build:views": "node scripts/build-views.mjs",
+    "build:host": "vite build",
+    "build": "npm run build:views && npm run build:host",
+    "dev": "npm run build:views && wrangler dev",
+    "dev:host": "vite",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "e2e": "node scripts/e2e.mjs",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.1.0",
+    "@modelcontextprotocol/ext-apps": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.1.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260925.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "playwright": "^1.63.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.141.0"
+  }
+}

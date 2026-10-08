@@ -1,0 +1,66 @@
+@import "../views/shared/theme.css";
+@source "./";
+
+/* Alexa-style light ring used by the voice orb. */
+.orb .orb-ring {
+  background: conic-gradient(from 0deg, #00caff, #1d4ed8, #7c3aed, #00caff);
+  opacity: 0.35;
+  filter: blur(0.5px);
+}
+.orb .orb-core {
+  background: radial-gradient(circle at 35% 30%, #3fd4ff 0%, #1563d6 55%, #0b2e7a 100%);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.25);
+}
+.orb-idle .orb-ring {
+  opacity: 0.45;
+}
+.orb-listening .orb-ring {
+  opacity: 1;
+  animation: orb-spin 1.2s linear infinite;
+}
+.orb-listening {
+  box-shadow: 0 0 0 6px rgba(0, 202, 255, 0.18), 0 0 28px rgba(0, 202, 255, 0.55);
+}
+.orb-thinking .orb-ring {
+  opacity: 0.9;
+  animation: orb-spin 2.2s linear infinite;
+}
+.orb-speaking .orb-ring {
+  opacity: 1;
+  animation: orb-pulse 0.9s ease-in-out infinite;
+}
+.orb-speaking {
+  box-shadow: 0 0 24px rgba(29, 78, 216, 0.55);
+}
+.orb-hero .orb-ring {
+  opacity: 0.9;
+  animation: orb-spin 6s linear infinite;
+}
+.orb-hero {
+  box-shadow: 0 0 60px rgba(0, 202, 255, 0.35);
+}
+.orb-mini {
+  background: radial-gradient(circle at 35% 30%, #3fd4ff 0%, #1563d6 60%, #0b2e7a 100%);
+  box-shadow: 0 0 0 2px rgba(0, 202, 255, 0.25);
+}
+
+@keyframes orb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes orb-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb .orb-ring {
+    animation: none !important;
+  }
+}
