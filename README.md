@@ -2,6 +2,8 @@
 
 **Talk to any MCP server the way Alexa+ would.** This host discovers a server's tools, routes what you say (by voice or text) to the right tool, renders each tool's [MCP Apps](https://github.com/modelcontextprotocol/ext-apps) view inline in the conversation, and shows every JSON-RPC message in a live protocol inspector.
 
+**[Live demo →](https://mcp-apps-alexa-host.sja-affu765.workers.dev)** · [connected to PathwayAI's 8-tool server](https://mcp-apps-alexa-host.sja-affu765.workers.dev/?server=https://pathway-ai.sjapathway.com/mcp)
+
 It's a working reference for the part MCP Apps leaves to you: **the host**. Use it to test your own server, as a starting point for your own assistant UI, or to copy the pieces that are easy to get wrong.
 
 ![The host running the bundled demo server: a forecast view, an interactive checklist calling back into the server, and the live protocol log](docs/host-demo.png)
@@ -43,7 +45,7 @@ Then try *"What's the weather in Seattle?"*, click **Make a packing checklist**,
 
 **Point it at your server:** paste the URL into the bar at the top, or open `http://localhost:8787/?server=https://your-server.example/mcp`.
 
-**Deploy:** `npm run deploy` publishes the host and demo server as one Cloudflare Worker.
+**Deploy:** set your own `account_id` in `wrangler.jsonc` (or remove it), then run `npm run deploy` to publish the host and demo server as one Cloudflare Worker.
 
 ## Requirements for your server
 
