@@ -124,7 +124,8 @@ scripts/                  View build, browser end-to-end check
 | --- | --- |
 | `npm run dev` | Host + demo server on :8787 |
 | `npm run dev:host` | Hot-reloading host on :5173 (proxies `/mcp` to :8787) |
-| `npm test` | Unit and MCP tests |
+| `npm test` | 17 tests: router, demo server over MCP, the host's MCP client over real HTTP round trips, Worker and CORS |
+| `npm run test:coverage` | The same suite with a coverage gate |
 | `npm run typecheck` | Strict TypeScript |
 | `npm run e2e -- <baseUrl> [otherMcpUrl]` | Browser test: views, view → server calls, follow-up messages, and connecting to another server |
 | `npm run deploy` | Deploy to Cloudflare Workers |
